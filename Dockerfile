@@ -8,4 +8,7 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s 
 
 RUN kubectl version --client
 COPY entrypoint.sh /entrypoint.sh
+RUN chmox +x /entrypoint.sh 
+
+
 ENTRYPOINT ["/entrypoint.sh"]
